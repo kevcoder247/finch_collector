@@ -1,5 +1,6 @@
-from unicodedata import name
+#from unicodedata import name
 from django.shortcuts import render
+from .models import Finch
 
 
 # Create your views here.
@@ -8,7 +9,8 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
-
+#Seed Data
+"""
 class Finch:  
   def __init__(self, name, breed, description, age):
     self.name = name
@@ -22,7 +24,8 @@ finches = [
   Finch('Raven', 'Robin', 'green', 4),
   Finch('In Hat', 'Magpie', 'red', 4),
 ]
-    
+ """   
 
 def finches_index(request):
+    finches = Finch.objects.all()
     return render(request, 'finches/index.html', {'finches': finches })
