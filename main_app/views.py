@@ -17,11 +17,10 @@ class Finch:
     self.age = age
 
 finches = [
-  Finch('Lolo', 'tabby', 'foul little demon', 3),
-  Finch('Sachi', 'tortoise shell', 'diluted tortoise shell', 0),
-  Finch('Raven', 'black tripod', '3 legged cat', 4),
-  Finch('In Hat', 'Siamese', 'hairless', 4),
-
+  Finch('Tweety', 'Wren', 'yellow', 60),
+  Finch('Sachi', 'BlackBird', 'blue', 0),
+  Finch('Raven', 'Robin', 'green', 4),
+  Finch('In Hat', 'Magpie', 'red', 4),
 ]
     
 

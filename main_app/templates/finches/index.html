@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Cat List</h1>
+<h1>Finches List</h1>
 
 {% for finch in finches %}
 <div class="card">
@@ -11,7 +11,7 @@
         {% if finch.age > 0 %}
         <p>Age: {{ finch.age }}</p>
         {% else %}
-        <p>Age: Kitten</p>
+        <p>Age: Bird</p>
         {% endif %}
     </div>
 </div>
