@@ -1,7 +1,8 @@
 #from unicodedata import name
 from django.shortcuts import render
 from .models import Finch
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 
 # Create your views here.
@@ -39,3 +40,11 @@ def finches_detail(request, finch_id):
 class FinchCreate(CreateView):
   model = Finch
   fields = '__all__'
+
+class FinchUpdate(UpdateView):
+  model = Finch
+  fields = ['name', 'breed', 'description', 'age']
+
+class FinchDelete(DeleteView):
+  model = Finch
+  success_url = '/finches/'
