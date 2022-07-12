@@ -35,3 +35,16 @@ class Feeding(models.Model):
     
     def __str__(self):
         return f"{self.get_meal_display()} on {self.date}"
+
+
+
+#Add Toys Model here
+class Toy(models.Model):
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.color} {self.name}'
+
+    def get_absolute_url(self):
+        return reverse('toys_detail', kwargs={'pk': self.id})

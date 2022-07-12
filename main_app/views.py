@@ -1,7 +1,10 @@
 #from unicodedata import name
+
 from django.shortcuts import redirect, render
-from .models import Finch
+from .models import Finch, Toy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
+from django.views.generic import ListView
 from .forms import FeedingForm
 
 # Create your views here.
@@ -47,12 +50,6 @@ def add_feeding(request, finch_id):
     new_feeding.save()
   return redirect('detail', finch_id=finch_id)
 
-
-
-
-
-
-
 class FinchCreate(CreateView):
   model = Finch
   fields = '__all__'
@@ -64,3 +61,28 @@ class FinchUpdate(UpdateView):
 class FinchDelete(DeleteView):
   model = Finch
   success_url = '/finches/'
+
+
+#Toys================================
+class ToyCreate(CreateView):
+  model = Toy
+  fields = ('name', 'color')  
+
+
+class ToyUpdate(UpdateView):
+  model = Toy
+  fields = ('name', 'color')
+
+class ToyDelete(DeleteView):
+  model = Toy
+  success_url = '/toys/'
+
+class ToyDetail(DetailView):
+  model = Toy
+  template_name = 'toys/detail.html'
+
+class ToyList(ListView):
+  model = Toy
+  template_name ='toys/index.html'
+
+
